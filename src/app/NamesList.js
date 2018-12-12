@@ -13,7 +13,7 @@ class NamesList extends Component {
     this.setState({search: e.target.value.substr(0,20)});
   }
 
-  getContent(e) {
+  getNames(e) {
     e.preventDefault();
     let selectedNames = document.querySelectorAll('input[name="name-check"]:checked');
     let selectedNamesArr = [];
@@ -43,7 +43,7 @@ class NamesList extends Component {
               return (<li key={i}><input name="name-check" type="checkbox" value={d.name} id={"dir-"+ (i + 1)} /><label htmlFor={"dir-"+ (i + 1)} style={{cursor: 'pointer', display: 'inline-block', margin: '0 auto', width: '35%'}}>{d.name}</label></li>)
             })}
           </ul>
-          <button type="submit" onClick={this.getContent.bind(this)}>Display Selected Names</button>
+          <button type="submit" onClick={this.getNames.bind(this)}>Display Selected Names</button>
         </form>
       </div>
     );
