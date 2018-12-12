@@ -36,14 +36,14 @@ class NamesList extends Component {
     return (
       <div style={{float: 'left', margin: '0 auto', width: '50%'}}>
         <h2>Names</h2>
-        <input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} />
+        <input type="text" placeholder="Search for Name" value={this.state.search} onChange={this.updateSearch.bind(this)} style={{padding: '8px'}} />
         <form>
           <ul style={{listStyle: 'none', padding: '0'}}>
             {filteredNames.map(function(d, i){
               return (<li key={i}><input name="name-check" type="checkbox" value={d.name} id={"dir-"+ (i + 1)} /><label htmlFor={"dir-"+ (i + 1)} style={{cursor: 'pointer', display: 'inline-block', margin: '0 auto', width: '35%'}}>{d.name}</label></li>)
             })}
           </ul>
-          <button type="submit" onClick={this.getNames.bind(this)}>Display Selected Names</button>
+          <button type="submit" onClick={this.getNames.bind(this)} style={{fontSize: '14px', borderRadius: '4px', padding: '14px', cursor: 'pointer'}} >Display Selected Names</button>
         </form>
       </div>
     );
